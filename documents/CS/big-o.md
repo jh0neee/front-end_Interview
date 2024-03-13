@@ -25,24 +25,24 @@
 
 - 루프 X
 
-  ```
-    function addUpToFirst(n) {
-      return n * (n + 1) / 2;
-    }
+  ```js
+  function addUpToFirst(n) {
+    return (n * (n + 1)) / 2;
+  }
   ```
 
   - 연산 횟수는 총 **3번** (곱셈, 덧셈, 나눗셈)
 
 - 루프 O
 
-  ```
-    function addUpToSecond(n) {
-      let total = 0;
-      for (let i = 1; i <= n; i++) {
-        total += i;
-      }
-      return total;
+  ```js
+  function addUpToSecond(n) {
+    let total = 0;
+    for (let i = 1; i <= n; i++) {
+      total += i;
     }
+    return total;
+  }
   ```
 
   |     코드      |   연산 횟수   |
