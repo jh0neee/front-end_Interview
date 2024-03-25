@@ -12,6 +12,18 @@
 
 <br/>
 
+- **시간복잡도**
+
+We say that an algorithm is O(f(n)) if the number of simple operations the computer has to do is eventually less than a constant times f(n), as n increases
+
+> n이 증가함에 따라, 컴퓨터가 수행해야하는 간단한 연산의 수가 결과적으로 상수 곱하기 f(n)보다 작으면 O(f(n)) 이라고 한다.
+
+선형 O(n) : f(n) = n => n의 값이 커질 수록 실행시간도 같이 늘어나는 형태. 비례
+이차형 O(n^2) : f(n) = n^2 => n의 값이 커질 수록 실행 시간이 n의 제곱
+일정 O(1) : f(n) = 1 => n의 값이 커질 수록 실행 시간이 상수.(아무 영향도 받지 않음)
+
+<br/>
+
 1. **시간 비교** -> 내장된 타이밍 함수(`performance.now()`) 사용
 
 - `정확도` 측면에서 문제가 있음
@@ -32,6 +44,8 @@
   ```
 
   - 연산 횟수는 총 **3번** (곱셈, 덧셈, 나눗셈)
+  - n의 값이 커질 수록 아무 변화가 없음(항상 연산은 3번). 실행시간 변하지 않음.
+  - O(1)
 
 - 루프 O
 
@@ -57,3 +71,41 @@
 
   - n이 10이라면, 연산 50개의 루프 밖의 2개의 할당을 더한 52
   - n이 커질수록 **연산의 갯수도 비례적으로 증가**함.
+  - O(n)
+
+<br />
+
+
+- **공간복잡도**
+
+boolean, number, undefined, null : O(1) 공간
+string, object, array : O(n) 공간
+
+- O(1)
+
+  ```js
+  function sum(n) {
+    let total = 0; // 1개의 숫자
+    for (let i = 0; i < arr.length; i++) {
+      // 1개 숫자 할당
+      total += arr[i];
+    }
+    return total;
+  }
+  ```
+
+  - total 변수에 숫자를 더하는 것 뿐. 입력의 크기와는 상관없이 항상 같다.
+
+- O(n)
+
+  ```js
+  function double(arr) {
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+      newArr.push(2 * arr[i]);
+    }
+    return newArr;
+  }
+  ```
+
+  - 입력된 arr 크기와 비례해서 공간이 커진다.
